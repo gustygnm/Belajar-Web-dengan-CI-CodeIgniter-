@@ -10,13 +10,26 @@
 </head>
 <body>
     <!-- navbar -->
+    <?php 
+    $this->load->view('template_admin/navbar');
+    ?>
+    
 
-    <!-- sidemenu -->
-
-    <!-- content -->
+   
+    <div class="row">
+        <div class="col-md-3">
+            <!-- sidemenu -->
+            <?php 
+            $this->load->view('template_admin/side-menu');
+            ?>
+        </div>
+        <div class="col-md-9">
+            <!-- content -->
+        </div>
+    </div>
     
     <!-- footer -->
-
+    <?php $this->load->view('template_admin/footer');  ?>
     <script src="<?php echo base_url(); ?>asset/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
