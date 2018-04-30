@@ -1,9 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script accsess allowed');
-class Admin extends CI_Controller{
+class Pemesanan extends CI_Controller{
     public function index(){
 
-        $data['judul']='Admin Homepage';
+        $data['judul']='Pemesanan';
         $data['content']='content_admin/homepage';
         $this->load->view('v_admin',$data);
     }

@@ -24,6 +24,8 @@
             ?>
         </div>
         <div class="col-md-9">
+            <h4> <?php echo $judul; ?></h4>
+            <?php $this->load->view($content); ?>
             <!-- content -->
         </div>
     </div>
