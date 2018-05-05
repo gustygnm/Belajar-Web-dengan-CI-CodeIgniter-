@@ -18,7 +18,7 @@
 		<td><?php echo $key->nama_barang; ?></td>
 		<td><?php echo $key->deskripsi; ?></td>
 		<td><?php echo $key->kategori; ?></td>
-		<td><?php echo $key->harga; ?></td>
+		<td>Rp. <?php echo $key->harga; ?></td>
 		<td><?php echo $key->status; ?></td>
 		<td>edit | hapus</td>
 	</tr>

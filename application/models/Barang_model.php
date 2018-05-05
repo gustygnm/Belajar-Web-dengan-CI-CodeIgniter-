@@ -9,8 +9,9 @@ return $this->db->get('barang')->result() ;
   public function get_id(){
 
   }
-  public function create(){
-      
+  //menambahkan data ke database
+  public function create($data){
+     return $this->db->insert('barang', $data);
 }
 public function update(){
       

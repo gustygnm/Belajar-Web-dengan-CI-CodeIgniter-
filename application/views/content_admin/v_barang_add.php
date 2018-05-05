@@ -1,4 +1,4 @@
-<forma action="" method="post">
+<form action="<?php echo site_url('barang/store'); ?>" method="post">
 	<div class="form-group">
 		<label>Nama Barang</label>
 		<input type="text" name="nama_barang" class="form-control input-sm">
@@ -23,7 +23,7 @@
 	<div class="form-group">
 		<label>Status</label>
 		<select name="status" class="form-control input-sm">
-			<option value="terrsedia">Tersedia</option>
+			<option value="tersedia">Tersedia</option>
 			<option value="habis">Habis</option>
 		</select>
 	</div>

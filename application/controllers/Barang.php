@@ -22,6 +22,18 @@ class Barang extends CI_Controller{
         $this->load->view('v_admin',$data);
 
     }
+       public function store(){
+		$data=array(
+		'nama_barang' =>$this->input->post('nama_barang'),
+		'deskripsi' =>$this->input->post('deskripsi'),
+		'kategori' =>$this->input->post('kategori'),
+		'harga' =>$this->input->post('harga'),
+		'gambar' =>'image.jpg',
+		'status' =>$this->input->post('status')
+		);
+ 	   $this->Barang_model->create($data);
+ 	   redirect('barang','refresh');
+    }
     public function tes(){
         $data=$this->Barang_model->get_all();
         print_r($data);
