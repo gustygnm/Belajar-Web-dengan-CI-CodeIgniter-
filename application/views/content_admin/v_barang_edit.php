@@ -10,11 +10,10 @@
 	<div class="form-group">
 		<label>Kategori</label>
 		<select name="kategori" class="form-control input-sm" >
-			<option value="<?php echo $isi_tabel->kategori; ?>"><?php echo $isi_tabel->kategori; ?></option>
-			<option value="pakaian">Pakaian</option>
-			<option value="elekrotnik">Elektronik</option>
-			<option value="accesoris">Accesoris</option>
-			<option value="lainnya">Lainnya</option>
+			<option value="pakaian" <?php if ($isi_tabel->kategori=="pakaian") {echo "selected";} ?>>Pakaian</option>
+			<option value="elekrotnik" <?php if ($isi_tabel->kategori=="elekrotnik") {echo "selected";} ?>>Elektronik</option>
+			<option value="accesoris" <?php if ($isi_tabel->kategori=="accesoris") {echo "selected";} ?>>Accesoris</option>
+			<option value="lainnya" <?php if ($isi_tabel->kategori=="lainnya") {echo "selected";} ?>>Lainnya</option>
 		</select>
 	</div>
 	<div class="form-group">
@@ -24,9 +23,8 @@
 	<div class="form-group">
 		<label>Status</label>
 		<select name="status" class="form-control input-sm">
-			<option value="<?php echo $isi_tabel->status; ?>"><?php echo $isi_tabel->status; ?></option>
-			<option value="tersedia">Tersedia</option>
-			<option value="habis">Habis</option>
+			<option value="tersedia" <?php if ($isi_tabel->status=="tersedia") {echo "selected";} ?>>Tersedia</option>
+			<option value="habis" <?php if ($isi_tabel->status=="habis") {echo "selected";} ?>>Habis</option>
 		</select>
 	</div>
 	<div class="form-group">

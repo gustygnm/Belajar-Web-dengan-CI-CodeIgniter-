@@ -15,7 +15,8 @@ class Barang_model extends CI_Model{
      return $this->db->insert('barang', $data);
 }
 public function update(){
-      
+      $this->db->where('id' , $param_id);
+      return $this->db->update('barang',$param_data);
 }
 public function delete(){
       

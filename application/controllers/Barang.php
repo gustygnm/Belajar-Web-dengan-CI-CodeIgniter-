@@ -34,6 +34,20 @@ class Barang extends CI_Controller{
  	   $this->Barang_model->create($data);
  	   redirect('barang','refresh');
     }
+    public function update(){
+        $id=$this->input->post('id');
+        $data=array(
+        'nama_barang' =>$this->input->post('nama_barang'),
+        'deskripsi' =>$this->input->post('deskripsi'),
+        'kategori' =>$this->input->post('kategori'),
+        'harga' =>$this->input->post('harga'),
+        'gambar' =>'image.jpg',
+        'status' =>$this->input->post('status')
+        );
+       $this->Barang_model->update($data , $id);
+       redirect('barang','refresh');
+    }
+
     public function edit($id='$key'){
 
         $data['isi_tabel']= $this->Barang_model->get_id($id);
