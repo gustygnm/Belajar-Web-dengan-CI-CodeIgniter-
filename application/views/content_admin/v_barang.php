@@ -20,7 +20,7 @@
 		<td><?php echo $key->kategori; ?></td>
 		<td>Rp. <?php echo $key->harga; ?></td>
 		<td><?php echo $key->status; ?></td>
-		<td>edit | hapus</td>
+		<td><a class="btn btn-default btn-sm" href="<?php echo site_url('barang/edit/' .$key->id); ?>"> Edit </a>  <a class="btn btn-danger btn-sm" href="<?php echo site_url('barang/hapus/' .$key->id); ?>"> Hapus </a></td>
 	</tr>
 
 	<?php } ?>

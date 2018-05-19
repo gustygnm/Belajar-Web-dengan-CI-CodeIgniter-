@@ -34,8 +34,15 @@ class Barang extends CI_Controller{
  	   $this->Barang_model->create($data);
  	   redirect('barang','refresh');
     }
-    public function tes(){
-        $data=$this->Barang_model->get_all();
-        print_r($data);
+    public function edit($id='$key'){
+
+        $data['isi_tabel']= $this->Barang_model->get_id($id);
+        if (count($data['isi_tabel']) == 0) {
+            echo 'Halaman tidak ditemukan';
+            return null;
+        }
+         $data['judul']='Form Edit Barang';
+        $data['content']='content_admin/v_barang_edit';
+        $this->load->view('v_admin',$data);
     }
 }
