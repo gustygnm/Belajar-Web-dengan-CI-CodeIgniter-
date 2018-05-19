@@ -59,4 +59,14 @@ class Barang extends CI_Controller{
         $data['content']='content_admin/v_barang_edit';
         $this->load->view('v_admin',$data);
     }
+
+    public function delete($id=''){
+    if ($id!==''){
+      $this->Barang_model->delete($id);
+       redirect('barang','refresh');
+    }
+
+    echo "Halaman tidak ditemukan!";
+    return null;     
+    }   
 }

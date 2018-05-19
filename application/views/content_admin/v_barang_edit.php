@@ -1,4 +1,5 @@
 <form action="<?php echo site_url('barang/update'); ?>" method="post">
+<input type="hidden" name="id" value="<?php echo $isi_tabel->id; ?>">
 	<div class="form-group">
 		<label>Nama Barang</label>
 		<input type="text" name="nama_barang" class="form-control input-sm" value="<?php echo $isi_tabel->nama_barang; ?>">

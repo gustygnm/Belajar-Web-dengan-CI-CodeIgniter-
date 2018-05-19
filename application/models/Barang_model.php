@@ -14,11 +14,12 @@ class Barang_model extends CI_Model{
   public function create($data){
      return $this->db->insert('barang', $data);
 }
-public function update(){
+public function update($param_data, $param_id){
       $this->db->where('id' , $param_id);
       return $this->db->update('barang',$param_data);
 }
-public function delete(){
-      
+public function delete($param_id){
+      $this->db->where('id' , $param_id);
+      return $this->db->delete('barang');
 }
 }

@@ -1,4 +1,4 @@
-<table class="table table-bordered">
+<table class="table table-bordered" style=" padding-right: :15px; ">
 <thread>
 <tr>
 <td>No</td>
@@ -20,12 +20,14 @@
 		<td><?php echo $key->kategori; ?></td>
 		<td>Rp. <?php echo $key->harga; ?></td>
 		<td><?php echo $key->status; ?></td>
-		<td><a class="btn btn-default btn-sm" href="<?php echo site_url('barang/edit/' .$key->id); ?>"> Edit </a>  <a class="btn btn-danger btn-sm" href="<?php echo site_url('barang/hapus/' .$key->id); ?>"> Hapus </a></td>
+		<td><a class="btn btn-default btn-sm" href="<?php echo site_url('barang/edit/' .$key->id); ?>"> Edit </a>  <a class="btn btn-danger btn-sm" href="<?php echo site_url('barang/delete/' .$key->id); ?>" onclick="return confirm('Yakin Hapus?')"> Hapus </a></td>
 	</tr>
 
 	<?php } ?>
 </tbody>
 
 </table>
+
+    <script src="<?php echo base_url(); ?>asset/bootstrap/js/sweetalert.js"></script>
 <a class=" btn btn-primary btn-sm" href="<?php echo site_url('barang/tambah'); ?>">Tambah Data</a>
 <br>
