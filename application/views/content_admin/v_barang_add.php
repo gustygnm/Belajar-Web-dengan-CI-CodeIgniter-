@@ -1,4 +1,4 @@
-<form action="<?php echo site_url('barang/store'); ?>" method="post">
+<form action="<?php echo site_url('barang/store'); ?>" method="post" enctype="multipart/form-data">
 	<div class="form-group">
 		<label>Nama Barang</label>
 		<input type="text" name="nama_barang" class="form-control input-sm">
