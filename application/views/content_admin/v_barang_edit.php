@@ -1,4 +1,4 @@
-<form action="<?php echo site_url('barang/update'); ?>" method="post">
+<form action="<?php echo site_url('barang/update'); ?>" method="post" enctype="multipart/form-data">
 <input type="hidden" name="id" value="<?php echo $isi_tabel->id; ?>">
 	<div class="form-group">
 		<label>Nama Barang</label>
@@ -27,6 +27,10 @@
 			<option value="tersedia" <?php if ($isi_tabel->status=="tersedia") {echo "selected";} ?>>Tersedia</option>
 			<option value="habis" <?php if ($isi_tabel->status=="habis") {echo "selected";} ?>>Habis</option>
 		</select>
+	</div>
+	<div class="form-group">
+		<label>Gambar</label>
+		<input type="file" name="image" class="form-control input-sm">
 	</div>
 	<div class="form-group">
 		<input type="submit" name="submit" value="Simpan" class=" btn btn-primary btn-sm">

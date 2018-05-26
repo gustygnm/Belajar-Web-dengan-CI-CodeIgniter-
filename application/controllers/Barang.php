@@ -52,17 +52,35 @@ class Barang extends CI_Controller{
 
     }
     public function update(){
-        $id=$this->input->post('id');
-        $data=array(
-        'nama_barang' =>$this->input->post('nama_barang'),
-        'deskripsi' =>$this->input->post('deskripsi'),
-        'kategori' =>$this->input->post('kategori'),
-        'harga' =>$this->input->post('harga'),
-        'gambar' =>'image.jpg',
-        'status' =>$this->input->post('status')
-        );
-       $this->Barang_model->update($data , $id);
-       redirect('barang','refresh');
+                $config['upload_path']          = './foto-barang/';
+                $config['allowed_types']        = 'gif|jpg|png';
+                $config['max_size']             = 1024;
+                $config['max_width']            = 1024;
+                $config['max_height']           = 1024;
+
+                $this->load->library('upload', $config);
+
+                if ( ! $this->upload->do_upload('image'))
+                {
+                        print_r($this->upload->display_errors());
+                }
+                else
+                {
+                    $file_name=$this->upload->data('file_name');
+                    $id=$this->input->post('id');
+                    $data=array(
+                    'nama_barang' =>$this->input->post('nama_barang'),
+                    'deskripsi' =>$this->input->post('deskripsi'),
+                    'kategori' =>$this->input->post('kategori'),
+                    'harga' =>$this->input->post('harga'),
+                    'gambar' =>$file_name,
+                    'status' =>$this->input->post('status')
+                    );
+                   $this->Barang_model->update($data , $id);
+                   redirect('barang','refresh');
+                }
+
+      
     }
 
     public function edit($id='$key'){

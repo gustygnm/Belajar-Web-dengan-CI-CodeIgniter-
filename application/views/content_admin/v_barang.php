@@ -7,6 +7,7 @@
 <td>Kategori</td>
 <td>Harga</td>
 <td>Status</td>
+<td>Gambar</td>
 <td>Aksi</td>
 </tr>
 </thread>
@@ -20,6 +21,11 @@
 		<td><?php echo $key->kategori; ?></td>
 		<td>Rp. <?php echo $key->harga; ?></td>
 		<td><?php echo $key->status; ?></td>
+		<td>
+			<center>
+	<img src="<?php echo base_url('foto-barang/'.$key->gambar); ?>" class="img" style="width: 80px">
+			</center>
+		</td>
 		<td><a class="btn btn-default btn-sm" href="<?php echo site_url('barang/edit/' .$key->id); ?>"> Edit </a>  <a class="btn btn-danger btn-sm" href="<?php echo site_url('barang/delete/' .$key->id); ?>" onclick="return confirm('Yakin Hapus?')"> Hapus </a></td>
 	</tr>
 
